@@ -1,5 +1,3 @@
-import './App.css';
-
 import SomeComponent from "./SomeComponent"
 import Color from "./Color"
 import { useEffect } from 'react';
