@@ -1,4 +1,4 @@
-import React,{ useContext, useState} from "react"
+import React from "react"
 
 export type Theme = "light" | "dark"
 
@@ -13,7 +13,7 @@ export const ThemeContext = React.createContext<ThemeValue>({
 });
 
 export const ThemeProvider: React.FC = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>("light")
+  const [theme, setTheme] = React.useState<Theme>("light")
   const themeValue = React.useMemo(() => ({ theme, setTheme}), [theme])
 
   return (
@@ -23,4 +23,4 @@ export const ThemeProvider: React.FC = ({ children }) => {
   )
 }
 
-export const useTheme = () => useContext(ThemeContext)
+export const useTheme = () => React.useContext(ThemeContext)
